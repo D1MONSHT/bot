@@ -40,7 +40,7 @@ def say_welcome(message):
 def say_list(message):
   bot.send_message(
         message.chat.id,
-        '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a></b>',
+        '<b>Hello! This is a telegram bot template written by <a href="https://github.com/D1MONSHT">otter18</a></b>',
         parse_mode='html'
     )
 
