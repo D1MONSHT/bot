@@ -42,7 +42,7 @@ def say_list(message):
     logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
     bot.send_message(
         message.chat.id,
-        '<b>Price <a href="https://github.com/D1MONSHT/bot"></a></b>',
+        '<b>Price <a href="https://github.com/D1MONSHT/bot"> </a></b>',
         parse_mode='html'
     )
 
