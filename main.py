@@ -29,7 +29,7 @@ dialog = {
 
 # --------------- bot -------------------
 
-@dp.message_handler(commands="start")
+@bot.message_handler(commands="start")
 async def cmd_start(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     buttons = ["С пюрешкой", "Без пюрешки"]
