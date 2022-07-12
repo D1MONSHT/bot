@@ -36,6 +36,15 @@ def say_welcome(message):
         '<b>Hello for bot!</b>',
         parse_mode='html'
     )
+@bot.message_handler(commands=['list])
+
+def say_welcome(message):
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
+    bot.send_message(
+        message.chat.id,
+        '<b>Prise list <a href="https://drive.google.com/file/d/12SdJo999mbHU1vX7-6m7YRuVYd3TAy_v/view?usp=drivesdk"></a></b>',
+        parse_mode='html'
+    )
 
 if __name__ == '__main__':
     if os.environ.get("IS_PRODUCTION", "False") == "True":
