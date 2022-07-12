@@ -36,6 +36,14 @@ def say_welcome(message):
         '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a></b>',
         parse_mode='html'
     )
+    @bot.message_handler(commands=['help', 'start'])
+def say_welcome(message):
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
+    bot.send_message(
+        message.chat.id,
+        '<b>Hello! This is a telegram bot template written by <a href="https://github.com/D1MONSHT">otter18</a></b>',
+        parse_mode='html'
+    )
 
 
 @bot.message_handler(func=lambda message: True)
