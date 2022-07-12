@@ -38,10 +38,10 @@ def say_welcome(message):
     )
 @bot.message_handler(commands=['list'])
 def say_list(message):
-  bot.send_message(
+  bot.send_photo(
         message.chat.id,
         '<b><a href="https://static.mk.ru/upload/entities/2020/05/22/16/photoreportsImages/detailPicture/f5/11/0b/41/6512506_5490947.jpg"></a></b>',
-        parse_mode='html'
+        parse_mode='photo'
     )
 
 @bot.message_handler(func=lambda message: True)
