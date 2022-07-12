@@ -28,15 +28,6 @@ dialog = {
 
 
 # --------------- bot -------------------
-# from aiogram.dispatcher.filters import Text
-@dp.message_handler(Text(equals="С пюрешкой"))
-async def with_puree(message: types.Message):
-    await message.reply("Отличный выбор!")
-
-
-@dp.message_handler(lambda message: message.text == "Без пюрешки")
-async def without_puree(message: types.Message):
-    await message.reply("Так невкусно!")
 
 @dp.message_handler(commands="start")
 async def cmd_start(message: types.Message):
