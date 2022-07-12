@@ -46,6 +46,16 @@ def say_list(message):
         parse_mode='html'
     )
 
+@bot.message_handler(func=lambda message: True)
+def echo(message):
+    for t, resp in dialog.items():
+        if sum([e in message.text.lower() for e in resp['in']]):
+            logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used {t}:\n\n%s', message.text)
+            bot.send_message(message.chat.id, random.choice(resp['out']))
+            return
+
+    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used echo:\n\n%s', message.text)
+    bot.send_message(message.chat.id, message.text)
 if __name__ == '__main__':
     if os.environ.get("IS_PRODUCTION", "False") == "True":
         app.run()
