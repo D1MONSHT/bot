@@ -38,6 +38,13 @@ async def with_puree(message: types.Message):
 async def without_puree(message: types.Message):
     await message.reply("Так невкусно!")
 
+@dp.message_handler(commands="start")
+async def cmd_start(message: types.Message):
+    keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+    buttons = ["С пюрешкой", "Без пюрешки"]
+    keyboard.add(*buttons)
+    await message.answer("Как подавать котлеты?", reply_markup=keyboard)
+
 
 
 @bot.message_handler(func=lambda message: True)
