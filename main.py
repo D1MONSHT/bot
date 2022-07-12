@@ -38,7 +38,6 @@ def say_welcome(message):
     )
     @bot.message_handler(commands=['list'])
 def say_list(message):
-    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
     bot.send_message(
         message.chat.id,
         '<b>Hello! This is a telegram bot template written by <a href="https://github.com/D1MONSHT">otter18</a></b>',
