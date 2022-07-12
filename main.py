@@ -28,14 +28,16 @@ dialog = {
 
 
 # --------------- bot -------------------
-@bot.message_handler(commands=['help', 'start'])
-def say_welcome(message):
-    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
-    bot.send_message(
-        message.chat.id,
-        '<b>Hello! This is a telegram bot template written by <a href="https://github.com/otter18">otter18</a></b>',
-        parse_mode='html'
-    )
+# from aiogram.dispatcher.filters import Text
+@dp.message_handler(Text(equals="С пюрешкой"))
+async def with_puree(message: types.Message):
+    await message.reply("Отличный выбор!")
+
+
+@dp.message_handler(lambda message: message.text == "Без пюрешки")
+async def without_puree(message: types.Message):
+    await message.reply("Так невкусно!")
+
 
 
 @bot.message_handler(func=lambda message: True)
