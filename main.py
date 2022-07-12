@@ -42,12 +42,10 @@ def say_list(message):
     logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
     bot.send_message(
         message.chat.id,
-        '<b>Prise list <a href="https://github.com/D1MONSHT/bot">list</a></b>',
+        '<b>Price <a href="https://github.com/D1MONSHT/bot"></a></b>',
         parse_mode='html'
     )
 
-    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used echo:\n\n%s', message.text)
-    bot.send_message(message.chat.id, message.text)
 if __name__ == '__main__':
     if os.environ.get("IS_PRODUCTION", "False") == "True":
         app.run()
