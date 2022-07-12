@@ -39,8 +39,7 @@ def say_welcome(message):
 @bot.message_handler(commands=['list'])
 
 def say_list(message):
-    logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
-    bot.send_photo(message.chat.id, 'https://static.mk.ru/upload/entities/2020/05/22/16/photoreportsImages/detailPicture/f5/11/0b/41/6512506_5490947.jpg')
+    bot.send_photo(message.chat.id, 'https://www.google.com/imgres?imgurl=https%3A%2F%2Fkartinkin.net%2Fuploads%2Fposts%2F2022-02%2F1645962851_1-kartinkin-net-p-krasivie-kartinki-devushek-narisovannie-1.jpg&imgrefurl=https%3A%2F%2Fkartinkin.net%2F75043-krasivye-kartinki-devushek-narisovannye.html&tbnid=7fF-_j2LRWbq4M&vet=12ahUKEwjAyZ6b4_P4AhWIo3IEHTQbBjYQMygBegUIARCyAQ..i&docid=O2WmcBCAmLgULM&w=1024&h=1280&q=%D1%84%D0%BE%D1%82%D0%BE&hl=ru&ved=2ahUKEwjAyZ6b4_P4AhWIo3IEHTQbBjYQMygBegUIARCyAQ')
 
     if __name__ == '__main__':
     if os.environ.get("IS_PRODUCTION", "False") == "True":
