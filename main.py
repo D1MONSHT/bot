@@ -9,7 +9,7 @@ from webhook import app
 # --------------- bot -------------------
 
 @bot.message_handler(commands="start")
-async def cmd_start(message: types.Message):
+def cmd_start(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     buttons = ["С пюрешкой", "Без пюрешки"]
     keyboard.add(*buttons)
@@ -21,9 +21,9 @@ async def cmd_start(message: types.Message):
 
 def get_id(message):
 
-    logger.info(f'</code>@{message.from_user.username}<code> used /id')
+ logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used echo:\n\n%s', message.text)
+    bot.send_message(message.chat.id, message.text)
 
-    bot.send_message(message.chat.id, f"user_id = {message.chat.id}")
 
 if __name__ == '__main__':
     if os.environ.get("IS_PRODUCTION", "False") == "True":
