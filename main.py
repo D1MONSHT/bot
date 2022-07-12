@@ -42,7 +42,7 @@ def say_list(message):
     logger.info(f'</code>@{message.from_user.username}<code> ({message.chat.id}) used /start or /help')
     bot.send_message(
         message.chat.id,
-        '<b>Prise list <a href="https://drive.google.com/file/d/12SdJo999mbHU1vX7-6m7YRuVYd3TAy_v/view?usp=drivesdk"></a></b>',
+        '<b>Prise list <a href="https://github.com/D1MONSHT/bot/issues/1#issue-1302247098"></a></b>',
         parse_mode='html'
     )
 
